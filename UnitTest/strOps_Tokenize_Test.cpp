@@ -6,7 +6,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace SchubladenUnitTest
 {
-  TEST_CLASS(strOps_Test_Tokenize)
+  TEST_CLASS(strOps_Tokenize)
   {
   public:
     TEST_METHOD(Tokenize_Simple)

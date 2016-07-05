@@ -7,6 +7,9 @@
     <Filter Include="_precompiled">
       <UniqueIdentifier>{0ce75e5d-6fc2-45a7-8475-e5484d8d5aff}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{7925c26f-492f-4576-b581-def01c09b892}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -22,6 +25,9 @@
     </ClCompile>
     <ClCompile Include="strOps_Tokenize_Test.cpp">
       <Filter>strOps</Filter>
+    </ClCompile>
+    <ClCompile Include="Network_SocketEndpoint_Test.cpp">
+      <Filter>Network</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

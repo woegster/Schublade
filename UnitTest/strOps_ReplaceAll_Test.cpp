@@ -6,7 +6,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace SchubladenUnitTest
 {
-  TEST_CLASS(strOps_Test_ReplaceAll)
+  TEST_CLASS(strOps_ReplaceAll)
   {
   public:
     TEST_METHOD(ReplaceAll_AllOccurancesReplaced)

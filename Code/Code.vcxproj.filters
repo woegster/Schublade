@@ -8,10 +8,16 @@
     <Filter Include="_precompiled">
       <UniqueIdentifier>{a3e0f2d3-901b-4d6f-8d36-b6d284dff9d5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\network">
+      <UniqueIdentifier>{a392061e-946e-4055-bfe8-a84b78554efa}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
       <Filter>_precompiled</Filter>
+    </ClCompile>
+    <ClCompile Include="SocketEndpoint.cpp">
+      <Filter>Source Files\network</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -20,6 +26,12 @@
     </ClInclude>
     <ClInclude Include="strOps.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SocketEndpoint.h">
+      <Filter>Source Files\network</Filter>
+    </ClInclude>
+    <ClInclude Include="networkCommon.h">
+      <Filter>Source Files\network</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
