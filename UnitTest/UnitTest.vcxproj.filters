@@ -1,19 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="preocmpiled">
+    <Filter Include="strOps">
+      <UniqueIdentifier>{8f1281eb-8e74-4f4d-8b87-93eeead9687d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="_precompiled">
       <UniqueIdentifier>{0ce75e5d-6fc2-45a7-8475-e5484d8d5aff}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
-      <Filter>preocmpiled</Filter>
+      <Filter>_precompiled</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
-      <Filter>preocmpiled</Filter>
+      <Filter>_precompiled</Filter>
     </ClCompile>
-    <ClCompile Include="unittest1.cpp" />
+    <ClCompile Include="strOps_ReplaceAll_Test.cpp">
+      <Filter>strOps</Filter>
+    </ClCompile>
+    <ClCompile Include="strOps_Tokenize_Test.cpp">
+      <Filter>strOps</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
