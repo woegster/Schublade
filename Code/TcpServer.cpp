@@ -4,6 +4,11 @@
 
 namespace toni
 {
+  TcpServer::~TcpServer()
+  {
+    CleanUp();
+  }
+
   bool TcpServer::Start(const SocketEndpoint& localEndpoint, int Backlog)
   {
     if (m_listenSocket == INVALID_SOCKET)

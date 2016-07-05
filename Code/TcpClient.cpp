@@ -46,6 +46,23 @@ namespace toni
     return -1;
   }
 
+  bool TcpClient::ConnectTo(const SocketEndpoint& endpoint)
+  {
+    if (m_connectedSocket == INVALID_SOCKET)
+    {
+      m_connectedSocket = socket(endpoint.GetAddressFamily(), SOCK_STREAM, IPPROTO_TCP);
+      if (m_connectedSocket != INVALID_SOCKET)
+      {
+        if (connect(m_connectedSocket, endpoint.GetIpGeneric(), endpoint.GetGenericIpSize()) == 0)
+        {
+          m_remoteAddress = endpoint;
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
   void TcpClient::Disconnect()
   {
     if (m_connectedSocket != INVALID_SOCKET)

@@ -13,6 +13,7 @@ namespace toni
     int Recv(void* writeableData, int BufferSize);
     int Send(void const * readableData, int BufferSize);
     const SocketEndpoint& GetEndpoint() const;
+    bool ConnectTo(const SocketEndpoint& endpoint);
     void Disconnect();
   private:
     SOCKET m_connectedSocket = INVALID_SOCKET;
