@@ -1,2 +1,5 @@
 # Schublade
-Schubladen Code den man immer brauche kann
+SchubladenCode ist eine Sammlung an generischen Codefragmenten.
+
+## Funktionen
+- String Operationen `strOps.h`
