@@ -147,6 +147,8 @@
     <ClInclude Include="SocketEndpointConverter.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="strOps.h" />
+    <ClInclude Include="TcpClient.h" />
+    <ClInclude Include="TcpServer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SocketEndpoint.cpp" />
@@ -157,6 +159,8 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="TcpClient.cpp" />
+    <ClCompile Include="TcpServer.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

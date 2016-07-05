@@ -56,6 +56,37 @@ namespace toni
     return nullptr;
   }
 
+  int SocketEndpoint::GetAddressFamily() const
+  {
+    return m_addressFamily;
+  }
+
+  sockaddr const * const SocketEndpoint::GetIpGeneric() const
+  {
+    switch (m_addressFamily)
+    {
+    case AF_INET:
+      return reinterpret_cast<sockaddr const * const>(&m_SockAddr.ipv4);
+    case AF_INET6:
+      return reinterpret_cast<sockaddr const * const>(&m_SockAddr.ipv6);
+    }
+
+    return nullptr;
+  }
+
+  size_t SocketEndpoint::GetGenericIpSize() const
+  {
+    switch (m_addressFamily)
+    {
+    case AF_INET:
+      return sizeof(m_SockAddr.ipv4);
+    case AF_INET6:
+      return sizeof(m_SockAddr.ipv6);
+    }
+
+    return 0;
+  }
+
   void SocketEndpoint::ZeroOutSockAddr()
   {
     memset(&m_SockAddr, 0, sizeof(m_SockAddr));
