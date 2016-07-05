@@ -20,11 +20,11 @@ namespace toni
     Disconnect();
   }
 
-  int TcpClient::Recv(std::vector<unsigned char>& recvBuffer)
+  int TcpClient::Recv(void* writeableData, int BufferSize)
   {
     if (m_connectedSocket != INVALID_SOCKET)
     {
-      int retVal = recv(m_connectedSocket, const_cast<char*>(reinterpret_cast<const char*>(recvBuffer.data())), static_cast<int>(recvBuffer.size()), 0);
+      int retVal = recv(m_connectedSocket, static_cast<char*>(writeableData), BufferSize, 0);
       if (retVal <= 0)
         Disconnect();
       return retVal;
@@ -33,11 +33,11 @@ namespace toni
     return -1;
   }
   
-  int TcpClient::Send(const std::vector<unsigned char>& recvBuffer)
+  int TcpClient::Send(void const * readableData, int BufferSize)
   {
     if (m_connectedSocket != INVALID_SOCKET)
     {
-      int retVal = send(m_connectedSocket, const_cast<char*>(reinterpret_cast<const char*>(recvBuffer.data())), static_cast<int>(recvBuffer.size()), 0);
+      int retVal = send(m_connectedSocket, static_cast<const char*>(readableData), BufferSize, 0);
       if (retVal <= 0)
         Disconnect();
       return retVal;
