@@ -29,5 +29,8 @@
     <ClCompile Include="Network_SocketEndpoint_Test.cpp">
       <Filter>Network</Filter>
     </ClCompile>
+    <ClCompile Include="Network_SocketEndpointConverter_Test.cpp">
+      <Filter>Network</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

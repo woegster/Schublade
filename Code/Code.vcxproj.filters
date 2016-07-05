@@ -19,6 +19,9 @@
     <ClCompile Include="SocketEndpoint.cpp">
       <Filter>Source Files\network</Filter>
     </ClCompile>
+    <ClCompile Include="SocketEndpointConverter.cpp">
+      <Filter>Source Files\network</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -31,6 +34,9 @@
       <Filter>Source Files\network</Filter>
     </ClInclude>
     <ClInclude Include="networkCommon.h">
+      <Filter>Source Files\network</Filter>
+    </ClInclude>
+    <ClInclude Include="SocketEndpointConverter.h">
       <Filter>Source Files\network</Filter>
     </ClInclude>
   </ItemGroup>
