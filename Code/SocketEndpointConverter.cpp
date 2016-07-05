@@ -58,4 +58,37 @@ namespace toni
 
     return retVal;
   }
+
+  std::string IPv4WithPortFromSocketEndpoint(const SocketEndpoint& endpoint)
+  {
+    std::string withoutPort = IPv4FromSocketEndpoint(endpoint);    
+
+    sockaddr_in const * const ipv4 = endpoint.GetIpV4();
+    if (ipv4)
+    {
+      std::string withPort = withoutPort;
+      withPort += ":";
+      withPort += std::to_string(ntohs(ipv4->sin_port));
+      return withPort;
+    }
+
+    return withoutPort;
+  }
+
+  std::string IPv6WithPortFromSocketEndpoint(const SocketEndpoint& endpoint)
+  {
+
+    std::string withoutPort = IPv6FromSocketEndpoint(endpoint);
+    sockaddr_in6 const * const ipv6 = endpoint.GetIpV6();
+    if (ipv6)
+    {
+      std::string withPort = "[";
+      withPort += withoutPort;
+      withPort += "]:";
+      withPort += std::to_string(ntohs(ipv6->sin6_port));
+      return withPort;
+    }
+
+    return withoutPort;
+  }
 }
