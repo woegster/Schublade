@@ -46,6 +46,9 @@
     <ClCompile Include="DllInjector.cpp">
       <Filter>Source Files\Win32</Filter>
     </ClCompile>
+    <ClCompile Include="ProcUtils.cpp">
+      <Filter>Source Files\Win32</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -73,6 +76,9 @@
       <Filter>Source Files\Win32</Filter>
     </ClInclude>
     <ClInclude Include="DllInjector.h">
+      <Filter>Source Files\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="ProcUtils.h">
       <Filter>Source Files\Win32</Filter>
     </ClInclude>
   </ItemGroup>

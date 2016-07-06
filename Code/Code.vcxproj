@@ -157,6 +157,7 @@
     <ClInclude Include="CpuUsageSampler.h" />
     <ClInclude Include="DllInjector.h" />
     <ClInclude Include="networkCommon.h" />
+    <ClInclude Include="ProcUtils.h" />
     <ClInclude Include="SocketEndpoint.h" />
     <ClInclude Include="SocketEndpointConverter.h" />
     <ClInclude Include="stdafx.h" />
@@ -167,6 +168,7 @@
   <ItemGroup>
     <ClCompile Include="CpuUsageSampler.cpp" />
     <ClCompile Include="DllInjector.cpp" />
+    <ClCompile Include="ProcUtils.cpp" />
     <ClCompile Include="SocketEndpoint.cpp" />
     <ClCompile Include="SocketEndpointConverter.cpp" />
     <ClCompile Include="stdafx.cpp">
