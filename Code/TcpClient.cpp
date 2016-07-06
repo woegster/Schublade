@@ -53,7 +53,7 @@ namespace toni
       m_connectedSocket = socket(endpoint.GetAddressFamily(), SOCK_STREAM, IPPROTO_TCP);
       if (m_connectedSocket != INVALID_SOCKET)
       {
-        if (connect(m_connectedSocket, endpoint.GetIpGeneric(), endpoint.GetGenericIpSize()) == 0)
+        if (connect(m_connectedSocket, endpoint.GetIpGeneric(), static_cast<int>(endpoint.GetGenericIpSize())) == 0)
         {
           m_remoteAddress = endpoint;
           return true;

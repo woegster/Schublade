@@ -13,13 +13,13 @@ namespace toni
     void Set(const in6_addr& inv6, USHORT port);
     sockaddr_in6 const * const GetIpV6() const;
     sockaddr_in const * const GetIpV4() const;
-    int GetAddressFamily() const;
+    ADDRESS_FAMILY GetAddressFamily() const;
     sockaddr const * const GetIpGeneric() const;
     size_t GetGenericIpSize() const;
   private:
     void ZeroOutSockAddr();
   private:
-    int m_addressFamily;
+    ADDRESS_FAMILY m_addressFamily;
     sockaddr_unified m_SockAddr;
   };
 

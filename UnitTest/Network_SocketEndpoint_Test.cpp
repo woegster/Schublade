@@ -2,6 +2,15 @@
 #include "CppUnitTest.h"
 #include "SocketEndpoint.h"
 
+namespace Microsoft {
+  namespace VisualStudio {
+    namespace CppUnitTestFramework
+    {
+      template<> inline std::wstring ToString<ADDRESS_FAMILY>(const ADDRESS_FAMILY& t) { RETURN_WIDE_STRING(t); }
+    }
+  }
+}
+
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 namespace SchubladenUnitTest
@@ -14,7 +23,7 @@ namespace SchubladenUnitTest
       m_Testee.Set(in6addr_any, 24);
       Assert::IsNotNull(m_Testee.GetIpV6());
       Assert::IsNotNull(m_Testee.GetIpGeneric());
-      Assert::AreEqual(AF_INET6, m_Testee.GetAddressFamily());
+      Assert::AreEqual<ADDRESS_FAMILY>(AF_INET6, m_Testee.GetAddressFamily());
       Assert::AreEqual(sizeof(sockaddr_in6), m_Testee.GetGenericIpSize());
       Assert::IsNull(m_Testee.GetIpV4());
     }   
@@ -26,7 +35,7 @@ namespace SchubladenUnitTest
       
       Assert::IsNotNull(m_Testee.GetIpV6());
       Assert::IsNotNull(m_Testee.GetIpGeneric());
-      Assert::AreEqual(AF_INET6, m_Testee.GetAddressFamily());
+      Assert::AreEqual<ADDRESS_FAMILY>(AF_INET6, m_Testee.GetAddressFamily());
       Assert::AreEqual(sizeof(sockaddr_in6), m_Testee.GetGenericIpSize());
       Assert::IsNull(m_Testee.GetIpV4());
     }
@@ -36,7 +45,7 @@ namespace SchubladenUnitTest
       m_Testee.Set(INADDR_BROADCAST, 24);
       Assert::IsNotNull(m_Testee.GetIpV4());
       Assert::IsNotNull(m_Testee.GetIpGeneric());
-      Assert::AreEqual(AF_INET, m_Testee.GetAddressFamily());
+      Assert::AreEqual<ADDRESS_FAMILY>(AF_INET, m_Testee.GetAddressFamily());
       Assert::AreEqual(sizeof(sockaddr_in), m_Testee.GetGenericIpSize());
       Assert::IsNull(m_Testee.GetIpV6());
     }
@@ -47,7 +56,7 @@ namespace SchubladenUnitTest
       m_Testee.Set(in4Addr);
       Assert::IsNotNull(m_Testee.GetIpV4());
       Assert::IsNotNull(m_Testee.GetIpGeneric());
-      Assert::AreEqual(AF_INET, m_Testee.GetAddressFamily());
+      Assert::AreEqual<ADDRESS_FAMILY>(AF_INET, m_Testee.GetAddressFamily());
       Assert::AreEqual(sizeof(sockaddr_in), m_Testee.GetGenericIpSize());
       Assert::IsNull(m_Testee.GetIpV6());
     }
@@ -57,7 +66,7 @@ namespace SchubladenUnitTest
       Assert::IsNull(m_Testee.GetIpV6());
       Assert::IsNull(m_Testee.GetIpV4());
       Assert::IsNull(m_Testee.GetIpGeneric());
-      Assert::AreEqual(AF_UNSPEC, m_Testee.GetAddressFamily());
+      Assert::AreEqual<ADDRESS_FAMILY>(AF_UNSPEC, m_Testee.GetAddressFamily());
       Assert::AreEqual(0ULL, m_Testee.GetGenericIpSize());
     }
   private:
