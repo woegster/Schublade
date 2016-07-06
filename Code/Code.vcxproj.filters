@@ -17,6 +17,12 @@
     <Filter Include="Source Files\network\tcp">
       <UniqueIdentifier>{2a26805e-a3c6-4ee5-9f99-0e5a9e541171}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\encoding">
+      <UniqueIdentifier>{7c269438-7f6d-4275-a0f2-c5568e319a62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Win32">
+      <UniqueIdentifier>{a8aa884d-ed3b-49e9-8fc0-0fbf0dbb9aec}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -33,6 +39,12 @@
     </ClCompile>
     <ClCompile Include="TcpClient.cpp">
       <Filter>Source Files\network\tcp</Filter>
+    </ClCompile>
+    <ClCompile Include="CpuUsageSampler.cpp">
+      <Filter>Source Files\Win32</Filter>
+    </ClCompile>
+    <ClCompile Include="DllInjector.cpp">
+      <Filter>Source Files\Win32</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -56,6 +68,12 @@
     </ClInclude>
     <ClInclude Include="TcpClient.h">
       <Filter>Source Files\network\tcp</Filter>
+    </ClInclude>
+    <ClInclude Include="CpuUsageSampler.h">
+      <Filter>Source Files\Win32</Filter>
+    </ClInclude>
+    <ClInclude Include="DllInjector.h">
+      <Filter>Source Files\Win32</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
