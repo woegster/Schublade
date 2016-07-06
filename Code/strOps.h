@@ -7,6 +7,9 @@ namespace toni
   template<class stringClass>
   void ReplaceAll(stringClass& source, const stringClass& what, const stringClass& with)
   {
+    if (what.empty())
+      return;
+
     auto foundPos = source.find(what);
     while (foundPos != stringClass::npos)
     {

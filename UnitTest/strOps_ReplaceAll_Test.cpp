@@ -29,5 +29,19 @@ namespace SchubladenUnitTest
       toni::ReplaceAll<std::string>(text, "gibts ned", "nix");
       Assert::AreEqual("HansHans", text.c_str());
     }
+
+    TEST_METHOD(ReplaceAll_ReplaceWithNothing)
+    {
+      std::string text = "Dies/Ist/Ein/Pfad";
+      toni::ReplaceAll<std::string>(text, "/", "");
+      Assert::AreEqual("DiesIstEinPfad", text.c_str());
+    }
+
+    TEST_METHOD(ReplaceAll_ReplaceNothingWithSomething_NoEffect)
+    {
+      std::string text = "MeinText";
+      toni::ReplaceAll<std::string>(text, "", "++");
+      Assert::AreEqual("MeinText", text.c_str());
+    }
   };
 }
