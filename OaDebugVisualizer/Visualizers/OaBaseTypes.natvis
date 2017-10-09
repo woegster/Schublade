@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+   <Type Name="CharString">
+     <DisplayString Condition="fixedValid_ != 0">{value.fixed, s}</DisplayString>
+     <DisplayString Condition="fixedValid_ == 0">{value.a.charStr, s}</DisplayString>
+     <StringView Condition="fixedValid_ == 0">value.a.charStr, s</StringView>
+     <StringView Condition="fixedValid_ != 0">value.fixed, s</StringView>
+   </Type>
+
+   <Type Name="ManagerIdentifier">
+     <DisplayString>{manSystem.sys_}:{(ManagerType)manType, en}  {(int)manNum}</DisplayString>
+   </Type>
+   
+   <Type Name="DpIdentifier">
+     <DisplayString LegacyAddin="OaDebugVisualizer.dll" Export="DpIdentifierFormatter"></DisplayString>
+   </Type>
+   
+   <Type Name="PVSSTime">
+     <DisplayString LegacyAddin="OaDebugVisualizer.dll" Export="PvssTimeFormatter"></DisplayString>
+   </Type>
+ </AutoVisualizer>

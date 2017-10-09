@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+ <Type Name="DpMsgRequest">
+     <Expand>
+       <Item Name="myType">myType</Item>
+       <Item Name="multipleAnswersAllowed">multipleAnswersAllowed</Item>
+       <LinkedListItems>
+         <HeadPointer>list.headPtr</HeadPointer>
+         <NextPointer>nextPtr</NextPointer>
+         <ValueNode>(RequestGroup*)this, na</ValueNode>
+       </LinkedListItems>
+     </Expand>
+   </Type>
+
+   <Type Name="RequestGroup">
+     <DisplayString>a RequestGroup</DisplayString>
+     <Expand>
+       <Item Name="myType">myType</Item>
+       <Item Name="aTime">aTime</Item>
+       <Item Name="time2">time2</Item>
+       <Item Name="maxAge">maxAge</Item>
+       <LinkedListItems>
+         <HeadPointer>list.headPtr</HeadPointer>
+         <NextPointer>nextPtr</NextPointer>
+         <ValueNode>(RequestItem*)this, na</ValueNode>
+       </LinkedListItems>
+     </Expand>
+   </Type>
+
+   <Type Name="RequestItem">
+     <DisplayString>{id}</DisplayString>
+     <Expand>
+       <Item Name="id">id</Item>
+       <Item Name="number">number</Item>
+       <Item Name="tolerance">tolerance</Item>
+       <Item Name="smoothTime">smoothTime</Item>
+     </Expand>
+   </Type>
+   
+   <Type Name="DpMsgComplexVC">
+     <Expand>
+       <Item Name="useServerTime">useServerTime</Item>
+       <Item Name="wantAnswer">wantAnswer</Item>
+       <LinkedListItems>
+         <HeadPointer>groupList.headPtr</HeadPointer>
+         <NextPointer>nextPtr</NextPointer>
+         <ValueNode>(DpVCGroup*)this, na</ValueNode>
+       </LinkedListItems>
+     </Expand>
+   </Type>
+   
+   <Type Name="DpVCGroup">
+     <Expand>
+       <Item Name="originManager">originManager</Item>
+       <Item Name="originUser">originUser</Item>
+       <Item Name="originTime">originTime</Item>
+       <LinkedListItems>
+         <HeadPointer>itemList.headPtr</HeadPointer>
+         <NextPointer>nextPtr</NextPointer>
+         <ValueNode>(DpVCItem*)this, na</ValueNode>
+       </LinkedListItems>
+     </Expand>
+   </Type>
+   
+   <Type Name="DpVCItem">
+     <DisplayString>{dpIdentifier} = {value, na}</DisplayString>
+   </Type>
+
+   <Type Name="DpMsgAnswer">
+     <Expand>
+       <Item Name="answerOn">answerOn</Item>
+       <Item Name="outstandingProgress">outstandingProgress</Item>
+       <LinkedListItems>
+         <HeadPointer>list.headPtr</HeadPointer>
+         <NextPointer>nextPtr</NextPointer>
+         <ValueNode>(AnswerGroup*)this, na</ValueNode>
+       </LinkedListItems>
+     </Expand>
+   </Type>
+   
+   <Type Name="AnswerGroup">
+     <Expand>
+       <Item Name="items in group">list</Item>
+     </Expand>
+   </Type>
+ </AutoVisualizer>

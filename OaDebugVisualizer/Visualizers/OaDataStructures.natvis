@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+ <AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">   
+   <Type Name="PtrList">
+     <Expand>
+       <LinkedListItems>
+         <HeadPointer>headPtr</HeadPointer>
+         <NextPointer>nextPtr</NextPointer>
+         <ValueNode>this, na</ValueNode>
+       </LinkedListItems>
+     </Expand>
+   </Type>
+   
+   <Type Name="ExprList">
+     <Expand>
+       <LinkedListItems>
+         <HeadPointer>(CtrlSment*)first</HeadPointer>
+         <NextPointer>next</NextPointer>
+         <ValueNode>this, na</ValueNode>
+       </LinkedListItems>
+     </Expand>
+   </Type>
+
+   <Type Name="SimpleStorage&lt;*&gt;">
+     <Expand>
+       <ArrayItems>
+         <Size>count</Size>
+         <ValuePointer>arrayPtr, na</ValuePointer>
+       </ArrayItems>
+     </Expand>
+   </Type>
+   
+   <!-- congratulations, its a linked list of arrays. -->
+   <Type Name="DynPtrArray&lt;*&gt;">
+     <Expand>
+       <CustomListItems>
+         <Variable Name="iterator" InitialValue="firstArrayPtr"/>
+         <Variable Name="curItemIndex" InitialValue="0"/>
+         <Loop> <!-- loop over linked list-->
+           <If Condition="iterator != nullptr">
+             <Loop> <!-- loop over array items-->
+               <If Condition="curItemIndex &lt; iterator-&gt;nofItemsInArray">
+                 <Item>iterator->arrayPtr[curItemIndex], na</Item>
+                 <Exec>curItemIndex++</Exec>
+               </If>
+               <Break Condition="curItemIndex == iterator-&gt;nofItemsInArray"/>
+             </Loop>
+             <Exec>iterator = iterator->nextArrayPtr</Exec>
+           </If>
+           <Break Condition="iterator == nullptr"/>
+         </Loop>
+       </CustomListItems>
+     </Expand>
+   </Type>
+ </AutoVisualizer>
