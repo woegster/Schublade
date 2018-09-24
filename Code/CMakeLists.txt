@@ -15,6 +15,10 @@ TcpClient.cpp
 TcpClient.h
 TcpServer.cpp
 TcpServer.h
+Sha1.cpp
+Sha1.h
+Base64.cpp
+Base64.h
 )
 
 add_library(Schublade STATIC ${SOURCES})

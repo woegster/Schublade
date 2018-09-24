@@ -8,6 +8,7 @@ namespace toni
   class TcpServer
   {
   public:
+    TcpServer();
     ~TcpServer();
     bool Start(const SocketEndpoint& localEndpoint, int Backlog);
     TcpClient* Accept();

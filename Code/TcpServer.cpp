@@ -3,9 +3,16 @@
 
 namespace toni
 {
+  TcpServer::TcpServer()
+  {
+    WSADATA wDat = {0};
+    WSAStartup(MAKEWORD(2, 2), &wDat);
+  }
+
   TcpServer::~TcpServer()
   {
     CleanUp();
+    WSACleanup();
   }
 
   bool TcpServer::Start(const SocketEndpoint& localEndpoint, int Backlog)
