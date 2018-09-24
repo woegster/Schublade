@@ -1,4 +1,6 @@
 #pragma once
+#include <wtypes.h>
+#include <string>
 
 namespace toni
 {

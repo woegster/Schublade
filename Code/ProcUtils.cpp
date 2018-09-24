@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "ProcUtils.h"
 #include <Windows.h>
 #include <psapi.h>

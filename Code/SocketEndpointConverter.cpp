@@ -1,4 +1,3 @@
-#include "stdafx.h"
 #include "SocketEndpointConverter.h"
 
 namespace toni
