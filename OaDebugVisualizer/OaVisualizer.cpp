@@ -42,6 +42,14 @@ struct DpIdentifier
   std::int16_t type;
 };
 
+struct ProtobufTime
+{
+  char vtable[8];
+  char metadataptr[8];
+  std::int64_t seconds;
+  std::int32_t nanoseconds;
+};
+
 #define MAGIC_MEMORY_READ(target) {\
   auto realAddress = pHelper->GetRealAddress(pHelper);\
   if(realAddress != 0)\
@@ -121,5 +129,19 @@ extern "C" ADDIN_API HRESULT DpIdentifierFormatter(DWORD dwAddress, DEBUGHELPER 
   }
 
   WSACleanup();  
+  return S_OK;
+}
+
+extern "C" ADDIN_API HRESULT ProtobufTimeFormatter(DWORD dwAddress, DEBUGHELPER *pHelper, int nBase, BOOL bUniStrings, char *pResult, size_t max, DWORD reserved)
+{
+  ProtobufTime timeToVisualize;
+  MAGIC_MEMORY_READ(timeToVisualize);
+
+  char formattedTime[128] = "";
+  strftime(formattedTime, sizeof(formattedTime), "%d.%m.%Y %H:%M:%S", gmtime(&timeToVisualize.seconds));
+
+  std::string fullFormat = ostreamFormat(formattedTime, " UTC +", timeToVisualize.nanoseconds, "ns");
+
+  sprintf_s(pResult, max, "%s", fullFormat.c_str());
   return S_OK;
 }
